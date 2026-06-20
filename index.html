@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script type="text/javascript">
+        // GitHub Pages SPA Hero
+        // https://github.com/rafgraph/spa-github-pages
+        (function (l) {
+            if (l.search[1] === '/') {
+                var decoded = l.search.slice(1).split('&').map(function (s) {
+                    return s.replace(/~and~/g, '&')
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+            }
+        }(window.location))
+    </script>
+    <!-- Primary Meta Tags -->
+    <title id="seo-title">McqMatrix | Master Competitive Exams</title>
+    <meta name="title" id="seo-meta-title" content="McqMatrix | Master Competitive Exams">
+    <meta name="description" id="seo-description"
+        content="Prepare for PPSC, SPSC, FPSC, IBA, NTS & CSS with McqMatrix. High-quality MCQs for competitive exams.">
+
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="og-url" content="https://ahmedsaeedss.github.io/">
+    <meta property="og:title" id="og-title" content="McqMatrix | Competitive Exam Preparation">
+    <meta property="og:description" id="og-description"
+        content="Comprehensive Preparation for PPSC, SPSC, FPSC, IBA, NTS & CSS. Master top-quality MCQs across multiple subjects online for free.">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" id="twitter-url" content="https://ahmedsaeedss.github.io/">
+    <meta property="twitter:title" id="twitter-title" content="McqMatrix | Competitive Exam Preparation">
+    <meta property="twitter:description" id="twitter-description"
+        content="Comprehensive Preparation for PPSC, SPSC, FPSC, IBA, NTS & CSS. Master top-quality MCQs across multiple subjects online for free.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jameel-noori/fonts/jameel-noori-nastaleeq4.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/jameel-noori@1.1.2/jameel-noori.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css?v=1.1">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#059669">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+
+    <!-- jsPDF & html2pdf Library for PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Side Ad Banners (Desktop Only) -->
+    <div class="side-ad-container left-ad">
+        <span class="ad-label-vert">ADVERTISEMENT</span>
+    </div>
+    <div class="side-ad-container right-ad">
+        <span class="ad-label-vert">ADVERTISEMENT</span>
+    </div>
+
+    <div id="menu-overlay" class="drawer-overlay hidden"></div>
+
+    <div class="background-pattern"></div>
+
+    <header class="app-header">
+        <!-- Decorative Background Icons -->
+        <div class="header-bg-icons">
+            <i class="fa-solid fa-earth-americas globe-icon"></i>
+            <i class="fa-solid fa-graduation-cap cap-icon"></i>
+        </div>
+        <div class="header-controls">
+            <button id="menu-toggle" class="control-btn mobile-only" aria-label="Open Menu" title="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <button id="dashboard-toggle" class="control-btn" aria-label="View Dashboard" title="View Dashboard">
+                <i class="fa-solid fa-chart-line"></i>
+                <span class="btn-label">Stats</span>
+            </button>
+            <button id="theme-toggle" class="control-btn" aria-label="Toggle Dark Mode" title="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+                <span class="btn-label">Mode</span>
+            </button>
+            <button id="sound-toggle" class="control-btn" aria-label="Toggle Sound" title="Toggle Sound">
+                <i class="fa-solid fa-volume-high"></i>
+                <span class="btn-label">Sound</span>
+            </button>
+            <button id="auth-btn" class="control-btn auth-btn-unlogged" aria-label="Login with Google"
+                title="Login with Google">
+                <i class="fa-brands fa-google"></i>
+                <span class="btn-label" id="auth-btn-label">Login</span>
+            </button>
+            <button id="install-app-btn" class="control-btn hidden" aria-label="Install App" title="Install App" style="color: #059669; border: 1px solid #059669; border-radius: 50%;">
+                <i class="fa-solid fa-download"></i>
+                <span class="btn-label">Install</span>
+            </button>
+        </div>
+        <div class="logo" id="home-logo" style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            <img src="logo/mcqmatrix_logo.png" onerror="this.onerror=null;this.src='icon-192x192.png';" alt="" style="height: 48px; width: 48px; border-radius: 50%; object-fit: cover;">
+            <h1 id="logo-text" style="margin: 0; font-weight: 900; font-size: 1.8rem; letter-spacing: -1.2px; display: flex; align-items: center;"><span style="color: #2ecc71;">Mcq</span><span style="color: #ffffff;">Matrix</span></h1>
+        </div>
+
+
+
+        <p class="subtitle">Comprehensive Preparation for PPSC, SPSC, FPSC, IBA, NTS & CSS</p>
+
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="#" id="nav-home" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#" id="nav-daily" class="nav-item"><i class="fa-solid fa-calendar-day"></i> Daily MCQs</a>
+                </li>
+                <li><a href="#" id="nav-mock" class="nav-item"><i class="fa-solid fa-file-signature"></i> Mock Test</a>
+                </li>
+                <li><a href="#" id="nav-exam" class="nav-item"><i class="fa-solid fa-stopwatch"></i> Timed Exam</a>
+                </li>
+                <li><a href="#" id="nav-bookmarks" class="nav-item"><i class="fa-solid fa-bookmark"></i> Bookmarks</a>
+                </li>
+                <li><a href="#" id="nav-mistakes" class="nav-item"><i class="fa-solid fa-triangle-exclamation"></i>
+                        Mistake Bank</a>
+                </li>
+                <li><a href="#" id="nav-add-mcq" class="nav-item"><i class="fa-solid fa-circle-plus"></i>
+                        Add MCQs</a>
+                </li>
+                <li><a href="#" id="nav-leaderboard" class="nav-item"
+                        style="background: rgba(212, 175, 55, 0.2); border-color: var(--accent); color: var(--accent);"><i
+                            class="fa-solid fa-ranking-star"></i> Global Leaderboard</a>
+                </li>
+                <li id="nav-item-admin" class="hidden"><a href="#" id="nav-admin" class="nav-item" style="color: #ef4444;"><i class="fa-solid fa-lock"></i> Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="app-container">
+
+        <!-- Screen 1: Category/Subject Selection -->
+        <section id="category-screen" class="screen active">
+            
+            <div class="category-header-row" style="position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; min-height: 50px; width: 100%;">
+                <button class="back-btn hidden" id="back-to-prev-category" aria-label="Go back" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); margin-bottom: 0; padding: 0.5rem 1rem; white-space: nowrap; z-index: 10;">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <div class="screen-header" style="text-align: center; margin-bottom: 0; width: 100%;">
+                    <h2 id="main-section-title" style="margin: 0; font-size: 1.6rem; font-weight: 800;">Select a Subject</h2>
+                </div>
+            </div>
+
+
+
+            <!-- Job Alerts Section -->
+            <div id="job-alerts-section" class="jobs-alerts-container hidden" style="margin-bottom: 2rem;">
+                <div class="jobs-header" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-bullhorn" style="color: #ef4444; font-size: 1.2rem;"></i>
+                    <h3 style="margin: 0; font-size: 1.2rem;">Latest Jobs & Alerts</h3>
+                </div>
+                <div id="jobs-list" class="jobs-list" style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <!-- Jobs will be injected here -->
+                </div>
+            </div>
+
+            <div id="categories-grid" class="categories-grid">
+                <!-- Categories/Subcategories will be injected here by JS -->
+            </div>
+
+        </section>
+
+        <!-- Screen 2: Set (Quiz) Selection -->
+        <section id="set-screen" class="screen">
+            <button class="back-btn" id="back-to-home-from-sets" aria-label="Go back">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </button>
+            <div class="screen-header">
+                <h2 id="set-category-title">Category Quizzes</h2>
+                <p>Select a 10-Question Quiz.</p>
+            </div>
+            <div class="categories-grid" id="sets-grid">
+                <!-- Sets will be injected here by JS -->
+            </div>
+        </section>
+
+        <!-- Screen 3: Quiz Application -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header" style="position: relative; display: flex; align-items: flex-start; justify-content: center; margin-bottom: 2rem; min-height: 60px; width: 100%;">
+                <button id="back-to-categories" class="back-btn" title="Back" style="position: absolute; left: 0; top: 0; margin-bottom: 0; padding: 0.5rem 1rem; z-index: 10;">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <div class="header-info" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                    <h2 id="current-category-title" style="margin: 0 0 0.5rem 0; font-size: 1.5rem; font-weight: 800;">Topic Name</h2>
+                    <div class="progress-info" style="width: 100%; max-width: 300px;">
+                        <span id="question-progress-text">1 / 10</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="timer-container" id="timer-container">
+                <div class="timer-bar" id="timer-bar"></div>
+                <div class="timer-text"><i class="fa-regular fa-clock"></i> <span id="time-left">60</span>s</div>
+            </div>
+
+            <div class="question-container">
+                <div class="translate-bar">
+                    <button id="read-aloud-btn" class="icon-btn" title="Read Aloud">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                    <button id="translate-btn" class="secondary-btn translate-btn" aria-label="Toggle Urdu Translation"
+                        title="Toggle Urdu Translation">
+                        <i class="fa-solid fa-language"></i> <span class="trans-text"
+                            style="font-family: 'Jameel Noori Nastaleeq', serif;">اردو</span>
+                    </button>
+                    <button id="bookmark-btn" class="icon-btn bookmark-btn" title="Bookmark Question">
+                        <i class="fa-regular fa-bookmark"></i>
+                    </button>
+                </div>
+                <h3 id="question-text" class="question-text">Question goes here?</h3>
+
+                <div class="options-grid" id="options-container">
+                    <!-- Options injected by JS -->
+                </div>
+
+                <div class="feedback-container hidden" id="feedback-container">
+                    <div class="feedback-content">
+                        <h4>Explanation:</h4>
+                        <p id="explanation-text"></p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="submit-btn" class="primary-btn" disabled>Check Answer</button>
+                    <button id="next-btn" class="primary-btn hidden">Next Question &nbsp;<i
+                            class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screen 4: Results -->
+        <section id="result-screen" class="screen">
+            <div class="result-card">
+                <div class="trophy-icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h2>Quiz Completed!</h2>
+                <p class="result-message" id="result-message">Great effort!</p>
+
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score">0</span>
+                        <span class="score-divider">/</span>
+                        <span id="total-questions">10</span>
+                    </div>
+                </div>
+
+                <!-- Detailed Analytics Report Card -->
+                <div id="quiz-report-card" class="report-card hidden">
+                    <h3><i class="fa-solid fa-chart-pie"></i> Detailed Performance Report</h3>
+                    <div class="report-stats">
+                        <div class="report-stat-item">
+                            <span class="label">Time Taken</span>
+                            <span id="report-time" class="value">00:00</span>
+                        </div>
+                        <div class="report-stat-item">
+                            <span class="label">Accuracy</span>
+                            <span id="report-accuracy" class="value">0%</span>
+                        </div>
+                    </div>
+                    <div class="weak-areas">
+                        <h4><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i> Topics to
+                            Improve:</h4>
+                        <ul id="weak-topics-list"></ul>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="improvement-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="result-actions" style="margin-top: 2rem;">
+                    <button id="retry-btn" class="secondary-btn"><i class="fa-solid fa-rotate-right"></i> Retry Quiz</button>
+                    <button id="next-set-btn" class="primary-btn hidden">Next Quiz <i class="fa-solid fa-forward"></i></button>
+                    <button id="home-btn" class="primary-btn"><i class="fa-solid fa-house"></i> Home</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screen: About Us -->
+        <section id="about-screen" class="screen">
+            <button class="back-btn back-to-home" aria-label="Go back">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </button>
+            <div class="screen-header">
+                <h2>About Us</h2>
+                <p>Welcome to McqMatrix</p>
+            </div>
+            <div class="info-content card" style="background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-top: 1rem; border: 1px solid var(--border-color); box-shadow: var(--shadow);">
+                <p><strong>McqMatrix</strong> is a leading online platform dedicated to providing high-quality, comprehensive Multiple Choice Questions (MCQs) for competitive exam preparation.</p>
+                <p>Our mission is to empower students and professionals aiming for PPSC, SPSC, FPSC, IBA, NTS, and CSS exams with the best free resources available on the internet.</p>
+                <p>Curated by <strong>Ahmed Saeed (Subject Specialist)</strong>, all data is meticulously checked for accuracy to ensure you get the reliable study material you deserve.</p>
+            </div>
+
+        </section>
+
+        <!-- Screen: Contact Us -->
+        <section id="contact-screen" class="screen">
+            <button class="back-btn back-to-home" aria-label="Go back">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </button>
+            <div class="screen-header">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+            <div class="info-content card" style="background: var(--card-bg); padding: 2.5rem; border-radius: 16px; margin-top: 1rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="margin-bottom: 2rem; color: var(--text-muted); text-align: center;">Have a question, feedback, or found an error? Send us a message and our team will get back to you soon.</p>
+                
+                <form id="contact-form">
+                    <div class="review-form-group">
+                        <label for="contact-name"><i class="fa-solid fa-user"></i> Full Name <span style="color:red">*</span></label>
+                        <input type="text" id="contact-name" class="form-control" placeholder="e.g. Ali Khan" required>
+                    </div>
+
+                    <div class="review-form-group">
+                        <label for="contact-email"><i class="fa-solid fa-envelope"></i> Email Address <span style="color:red">*</span></label>
+                        <input type="email" id="contact-email" class="form-control" placeholder="yourname@example.com" required>
+                    </div>
+
+                    <div class="review-form-group">
+                        <label for="contact-subject"><i class="fa-solid fa-tag"></i> Subject / Reason</label>
+                        <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Question Correction, Feedback">
+                    </div>
+
+                    <div class="review-form-group">
+                        <label for="contact-message"><i class="fa-solid fa-comment-dots"></i> Your Message <span style="color:red">*</span></label>
+                        <textarea id="contact-message" class="form-control" rows="5" placeholder="Tell us more about your query..." required style="resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" id="contact-submit-btn" class="primary-btn full-width" style="justify-content: center; margin-top: 1rem; background: var(--primary);">
+                        <span id="contact-btn-text">Send Message</span> <i id="contact-btn-icon" class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center;">
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Alternatively, you can still reach us at:</p>
+                    <a href="mailto:support@mcqmatrix.com" style="color: var(--primary); text-decoration: none; font-weight: 500;">support@mcqmatrix.com</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screen: Privacy Policy -->
+        <section id="privacy-screen" class="screen">
+            <button class="back-btn back-to-home" aria-label="Go back">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </button>
+            <div class="screen-header">
+                <h2>Privacy Policy</h2>
+                <p>How we handle your data</p>
+            </div>
+            <div class="info-content card" style="background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-top: 1rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
+                <h3>1. Information Collection</h3>
+                <p>McqMatrix does not generally collect personally identifiable information unless you explicitly provide it (e.g., creating an admin account). We may use local storage to save your quiz progress and settings locally on your device.</p>
+
+                
+                <h3 style="margin-top: 1.5rem;">2. Cookies & Advertising</h3>
+                <p>We use third-party advertising companies, such as Google AdSense, to serve ads when you visit our Website. These companies may use cookies to serve ads based on your prior visits to our website or other websites.</p>
+                
+                <h3 style="margin-top: 1.5rem;">3. Firebase Analytics</h3>
+                <p>We utilize Google Firebase to aggregate anonymous usage data to improve application performance and user experience.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Loading Overlay for Lazy Loading -->
+    <div id="loading-overlay" class="modal-overlay hidden" style="z-index: 9999; flex-direction: column; align-items: center; justify-content: center;">
+        <div class="spinner" style="width: 50px; height: 50px; border: 5px solid rgba(255,255,255,0.3); border-top: 5px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <p style="color: white; margin-top: 1rem; font-weight: 500; font-size: 1.1rem;">Downloading Subject Data...</p>
+        <style>
+            @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        </style>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <!-- Stats on the Left -->
+            <div id="public-stats-container" class="footer-stats-grid">
+                <!-- Stats injected by JS -->
+            </div>
+
+            <!-- Content on the Right -->
+            <div class="footer-main-content">
+                <p>Comprehensive Preparation for PPSC, SPSC, FPSC, and CSS aspirants.</p>
+                <p class="dev-credit">Developed by: Ahmed Saeed Subject Specialist</p>
+                <div class="footer-links">
+                    <a href="?p=about" class="footer-link">About Us</a>
+                    <a href="?p=contact" class="footer-link">Contact Us</a>
+                    <a href="?p=privacy" class="footer-link">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Elements -->
+    <audio id="sound-correct" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"
+        preload="auto"></audio>
+    <audio id="sound-incorrect" src="https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3"
+        preload="auto"></audio>
+
+    <!-- Scripts -->
+    <!-- Screen 5: Dashboard Modal -->
+    <div id="dashboard-modal" class="modal-overlay hidden">
+        <div class="modal-content dashboard-modal">
+            <div class="modal-header modal-header-premium">
+                <h2><i class="fa-solid fa-id-card"></i> McqMatrix Progress</h2>
+                <button id="close-dashboard" class="icon-btn" aria-label="Close Dashboard"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="dashboard-body">
+                <div class="dashboard-left">
+                    <div class="stats-grid-horizontal-premium">
+                        <div class="stat-card-premium">
+                            <i class="fa-solid fa-file-pen"></i>
+                            <div class="stat-info">
+                                <div class="stat-value" id="stats-total-quizzes">0</div>
+                                <div class="stat-label">Quizzes Taken</div>
+                            </div>
+                        </div>
+                        <div class="stat-card-premium">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <div class="stat-info">
+                                <div class="stat-value" id="stats-avg-score">0%</div>
+                                <div class="stat-label">Avg Accuracy</div>
+                            </div>
+                        </div>
+                        <div class="stat-card-premium">
+                            <i class="fa-solid fa-award"></i>
+                            <div class="stat-info">
+                                <div class="stat-value" id="stats-total-correct">0</div>
+                                <div class="stat-label">Total Correct</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card mt-4">
+                        <h4><i class="fa-solid fa-chart-line"></i> Recent Performance Trend</h4>
+                        <div class="trend-chart-premium" id="score-trend-chart">
+                            <!-- Bars injected by JS -->
+                        </div>
+                    </div>
+
+                    <div class="dashboard-actions">
+                        <button id="reset-stats" class="danger-btn"><i class="fa-solid fa-rotate"></i> Reset
+                            Progress</button>
+                    </div>
+                </div>
+                <div class="dashboard-right">
+                    <div class="performance-section">
+                        <h3><i class="fa-solid fa-chart-simple"></i> Performance by Subject</h3>
+                        <div id="subject-progress-list" class="subject-progress-list">
+                            <!-- Progress bars injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 6: Timed Exam Selection Modal -->
+    <div id="exam-modal" class="modal-overlay hidden">
+        <div class="modal-content exam-selection-modal">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-stopwatch"></i> Timed Exam Setup</h2>
+                <button id="close-exam-modal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="exam-setup-body">
+                <div class="setup-header-row">
+                    <div class="setup-section-compact">
+                        <h4><i class="fa-solid fa-hourglass-half"></i> Time</h4>
+                        <p id="exam-duration-text" class="compact-text">45 Min</p>
+                    </div>
+
+                    <div class="setup-section-compact">
+                        <h4><i class="fa-solid fa-list-ol"></i> Count</h4>
+                        <div class="radio-group compact-radios">
+                            <label class="radio-label">
+                                <input type="radio" name="exam-count" value="50" checked>
+                                <span>50</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="exam-count" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setup-section">
+                    <h3><i class="fa-solid fa-layer-group"></i> 2. Select Subjects</h3>
+                    <div id="exam-subject-list" class="subject-checkbox-list">
+                        <!-- Subject checkboxes injected by JS -->
+                    </div>
+                </div>
+
+                <button id="start-exam-btn" class="primary-btn"
+                    style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+                    Start Exam <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 7: Global Leaderboard Modal -->
+    <div id="leaderboard-modal" class="modal-overlay hidden">
+        <div class="modal-content leaderboard-modal">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--accent) 0%, #B8860B 100%);">
+                <h2><i class="fa-solid fa-trophy"></i> Global Leaderboard</h2>
+                <button id="close-leaderboard" class="icon-btn" style="color: white;"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="leaderboard-body">
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">Top 50 highest scoring
+                    users</p>
+                <div class="leaderboard-list">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Quizzes Taken</th>
+                                <th>Correct</th>
+                                <th>Avg Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-tbody">
+                            <tr>
+                                <td colspan="5" style="text-align:center;">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Login/Signup Modal -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width: 350px;">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-user-circle"></i> <span id="auth-modal-title">Sign In</span></h2>
+                <button id="close-login-modal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="text-align: left;">
+                
+                <div class="auth-tabs">
+                    <button id="tab-login" class="auth-tab active">Log In</button>
+                    <button id="tab-signup" class="auth-tab">Sign Up</button>
+                </div>
+                
+
+                <p id="auth-subtitle">
+                    Welcome back! Please enter your details.
+                </p>
+                
+                <div id="signup-username-group" class="review-form-group hidden">
+                    <label for="signup-username">Username <span style="color:red">*</span></label>
+                    <input type="text" id="signup-username" class="form-control" placeholder="Choose a username">
+                </div>
+
+                <div class="review-form-group">
+                    <label for="login-email">Email Address <span style="color:red">*</span></label>
+                    <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                </div>
+
+                <div id="signup-phone-group" class="review-form-group hidden">
+                    <label for="signup-phone">Phone Number <span style="color:red">*</span></label>
+                    <input type="tel" id="signup-phone" class="form-control" placeholder="e.g. 03001234567">
+                </div>
+
+                <div class="review-form-group">
+                    <label for="login-password">Password <span style="color:red">*</span></label>
+                    <div style="position: relative;">
+                        <input type="password" id="login-password" class="form-control" placeholder="Enter password" required>
+                        <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePasswordVisibility('login-password', this)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted);"></i>
+                    </div>
+                </div>
+
+                <div id="signup-confirm-group" class="review-form-group hidden">
+                    <label for="signup-confirm-password">Confirm Password <span style="color:red">*</span></label>
+                    <div style="position: relative;">
+                        <input type="password" id="signup-confirm-password" class="form-control" placeholder="Repeat password">
+                        <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePasswordVisibility('signup-confirm-password', this)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted);"></i>
+                    </div>
+                </div>
+
+                <div id="admin-secret-group" class="review-form-group hidden">
+                    <label for="admin-secret">Admin Secret Code <span style="color:red">*</span></label>
+                    <input type="password" id="admin-secret" class="form-control" placeholder="Enter strictly confidential code">
+                </div>
+
+                <div id="forgot-password-link">
+                    <a href="#" id="forgot-password-btn">
+                        <i class="fa-solid fa-key"></i> Forgot Password?
+                    </a>
+                </div>
+                
+                <button id="submit-login-btn" class="primary-btn full-width"><span id="auth-action-text">Log In</span> <i id="auth-action-icon" class="fa-solid fa-arrow-right-to-bracket"></i></button>
+
+                <div class="auth-divider" id="social-login-divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-login-group" id="social-login-group">
+                    <button id="google-login-btn" class="social-btn google-btn">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20">
+                        Continue with Google
+                    </button>
+                    <button id="facebook-login-btn" class="social-btn facebook-btn">
+                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" width="20">
+                        Continue with Facebook
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add MCQ Modal -->
+    <div id="add-mcq-modal" class="modal-overlay hidden">
+        <div class="modal-content add-mcq-modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-circle-plus"></i> Add Your MCQs</h2>
+                <button id="close-add-mcq-modal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="text-align: left;">
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
+                    Contribute to the community! Provide a clear question, 4 options, and select the correct answer.
+                </p>
+                
+                <div class="review-form-group">
+                    <label for="mcq-category">Select Subject/Category <span style="color:red">*</span></label>
+                    <select id="mcq-category" class="form-control" required>
+                        <option value="">-- Choose Category --</option>
+                        <!-- Options injected by JS -->
+                    </select>
+                </div>
+
+                <div class="review-form-group">
+                    <label for="mcq-question">Question Text <span style="color:red">*</span></label>
+                    <textarea id="mcq-question" rows="3" placeholder="Type your question here..." required></textarea>
+                </div>
+
+                <div class="options-grid options-grid-mobile" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div class="review-form-group" style="margin-bottom: 0;">
+                        <label for="mcq-opt-a">Option A <span style="color:red">*</span></label>
+                        <input type="text" id="mcq-opt-a" placeholder="Enter option A" required>
+                    </div>
+                    <div class="review-form-group" style="margin-bottom: 0;">
+                        <label for="mcq-opt-b">Option B <span style="color:red">*</span></label>
+                        <input type="text" id="mcq-opt-b" placeholder="Enter option B" required>
+                    </div>
+                    <div class="review-form-group" style="margin-bottom: 0;">
+                        <label for="mcq-opt-c">Option C <span style="color:red">*</span></label>
+                        <input type="text" id="mcq-opt-c" placeholder="Enter option C" required>
+                    </div>
+                    <div class="review-form-group" style="margin-bottom: 0;">
+                        <label for="mcq-opt-d">Option D <span style="color:red">*</span></label>
+                        <input type="text" id="mcq-opt-d" placeholder="Enter option D" required>
+                    </div>
+                </div>
+
+                <div class="review-form-group">
+                    <label for="mcq-correct">Correct Answer <span style="color:red">*</span></label>
+                    <select id="mcq-correct" class="form-control" required>
+                        <option value="">-- Select Correct Option --</option>
+                        <option value="0">Option A</option>
+                        <option value="1">Option B</option>
+                        <option value="2">Option C</option>
+                        <option value="3">Option D</option>
+                    </select>
+                </div>
+
+                <button id="submit-mcq-btn" class="primary-btn full-width" style="margin-top: 1rem;">Submit Question <i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="admin-modal" class="modal-overlay hidden">
+        <div class="modal-content admin-panel-modal" style="max-width: 1000px; max-height: 90vh; display: flex; flex-direction: column;">
+            <div class="modal-header" style="border-bottom: 2px solid #ff0000;">
+                <h2 style="color: #ff0000; font-weight: 800; text-shadow: 0 0 5px rgba(255,0,0,0.1);"><i class="fa-solid fa-user-shield"></i> Admin Control Panel</h2>
+                <button id="close-admin-modal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="admin-layout" style="display: flex; flex: 1; overflow: hidden;">
+                <!-- Admin Sidebar -->
+                <div class="admin-sidebar" style="width: 260px; background: var(--bg-secondary); border-right: 1px solid var(--border-color); padding: 1.5rem 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 2rem;">
+                    
+                    <!-- Admin Sidebar Header Area -->
+                    <div style="display: flex; align-items: center; gap: 0.8rem; padding-left: 0.5rem;">
+                        <div style="width: 38px; height: 38px; background: #fff1f2; color: #ff0000; border: 1px solid #ff0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;">
+                            A
+                        </div>
+                        <div style="line-height: 1.2;">
+                            <div style="font-weight: 800; font-size: 0.95rem; color: #ff0000; text-shadow: 0 0 4px rgba(255,0,0,0.1);">McqMatrix ADMIN</div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);">Admin Control Panel</div>
+                        </div>
+
+                    </div>
+
+                    <ul class="admin-nav-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-start;">
+                        <li>
+                            <button class="admin-tab-btn admin-btn-outline active" data-tab="admin-dashboard" onclick="switchAdminTab('admin-dashboard', this)">
+                                <i class="fa-solid fa-border-all"></i> Dashboard
+                            </button>
+                        </li>
+                        <li>
+                            <button class="admin-tab-btn admin-btn-outline" data-tab="admin-jobs" onclick="switchAdminTab('admin-jobs', this)">
+                                <i class="fa-solid fa-briefcase"></i> Manage Jobs
+                            </button>
+                        </li>
+                        <li>
+                            <button class="admin-tab-btn admin-btn-outline" data-tab="admin-users" onclick="switchAdminTab('admin-users', this)">
+                                <i class="fa-solid fa-users"></i> Manage Users
+                            </button>
+                        </li>
+                        <li>
+                            <button class="admin-tab-btn admin-btn-outline" data-tab="admin-pending" onclick="switchAdminTab('admin-pending', this)">
+                                <i class="fa-regular fa-square-check"></i> Pending Approvals
+                            </button>
+                        </li>
+                        <li>
+                            <button class="admin-tab-btn admin-btn-outline" data-tab="admin-edit-mcqs" onclick="switchAdminTab('admin-edit-mcqs', this)">
+                                <i class="fa-solid fa-pen-to-square"></i> Edit/Delete MCQs
+                            </button>
+                        </li>
+                        <li>
+                            <button class="admin-tab-btn admin-btn-outline" data-tab="admin-export" onclick="switchAdminTab('admin-export', this)">
+                                <i class="fa-solid fa-download"></i> Export Data
+                            </button>
+                        </li>
+                        <li style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); width: 100%;">
+                            <button id="admin-logout-btn" class="admin-tab-btn" onclick="const navLogout = document.getElementById('nav-logout'); if(navLogout) navLogout.click();" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); width: 100%;">
+                                <i class="fa-solid fa-right-from-bracket"></i> Logout
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Admin Main Content Area -->
+                <div class="admin-main-content" style="flex: 1; padding: 1.5rem; overflow-y: auto; background: var(--bg-primary);">
+                    
+                    <!-- Tab 1: Dashboard -->
+                    <div id="admin-dashboard" class="admin-tab-content active">
+                        <h3><i class="fa-solid fa-chart-pie"></i> Platform Overview</h3>
+                        <div class="stats-grid-vertical" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                            <div class="stat-card">
+                                <i class="fa-solid fa-users" style="color: #3b82f6;"></i>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="admin-total-users">0</div>
+                                    <div class="stat-label">Total Users</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fa-solid fa-database" style="color: #10b981;"></i>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="admin-total-mcqs">0</div>
+                                    <div class="stat-label">Total MCQs</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fa-solid fa-list-check" style="color: #f59e0b;"></i>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="admin-pending-count">0</div>
+                                    <div class="stat-label">Pending Reviews</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visitor Demographics Section -->
+                        <div style="margin-top: 2rem;">
+                            <h3><i class="fa-solid fa-earth-americas"></i> Visitor Demographics</h3>
+                            <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+                                Geographic location of your audience.
+                            </p>
+                            <div class="table-container" style="overflow-x: auto; max-height: 250px;">
+                                <table class="leaderboard-table" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Country</th>
+                                            <th>Visitors Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-visitor-stats">
+                                        <tr>
+                                            <td colspan="2" style="text-align:center;">Loading analytics...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Manage Jobs -->
+                    <div id="admin-jobs" class="admin-tab-content hidden">
+                        <h3><i class="fa-solid fa-briefcase"></i> Manage Jobs & Alerts</h3>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
+                            Add, edit, or remove job alerts and test date announcements.
+                        </p>
+
+                        <!-- Add New Alert Form -->
+                        <div class="job-form-container">
+                            <h4><i class="fa-solid fa-plus-circle"></i> Add New Alert</h4>
+                            
+                            <div class="job-form-grid">
+                                <div class="review-form-group" style="grid-column: span 2;">
+                                    <label for="admin-job-title"><i class="fa-solid fa-briefcase"></i> Job Title / Alert <span style="color:red">*</span></label>
+                                    <input type="text" id="admin-job-title" class="form-control" placeholder="e.g. FPSC Custom Inspector" required>
+                                </div>
+
+                                <div class="review-form-group">
+                                    <label for="admin-job-dept"><i class="fa-solid fa-building"></i> Department</label>
+                                    <input type="text" id="admin-job-dept" class="form-control" placeholder="e.g. FPSC, PPSC">
+                                </div>
+
+                                <div class="review-form-group">
+                                    <label for="admin-job-deadline"><i class="fa-solid fa-calendar-alt"></i> Deadline <span style="color:red">*</span></label>
+                                    <input type="date" id="admin-job-deadline" class="form-control" required>
+                                </div>
+
+                                <div class="review-form-group">
+                                    <label for="admin-job-link"><i class="fa-solid fa-link"></i> Application Link</label>
+                                    <input type="url" id="admin-job-link" class="form-control" placeholder="https://...">
+                                </div>
+
+                                <div class="review-form-group">
+                                    <label for="admin-job-image-file"><i class="fa-solid fa-image"></i> Upload Image</label>
+                                    <input type="file" id="admin-job-image-file" class="form-control" accept="image/*">
+                                    <input type="hidden" id="admin-job-image" value="">
+                                    <div id="admin-job-image-preview" style="margin-top: 0.5rem; display: none;">
+                                        <img src="" style="max-width: 120px; border-radius: 8px; border: 1px solid var(--border-color);" alt="Preview">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="admin-add-job-btn" class="primary-btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;">
+                                <i class="fa-solid fa-paper-plane"></i> <span id="admin-add-job-btn-text">Publish Alert</span>
+                            </button>
+                        </div>
+
+                        <h4><i class="fa-solid fa-list-check"></i> Active Alerts</h4>
+                        <div class="table-container" style="overflow-x: auto; margin-top: 1rem;">
+                            <table class="leaderboard-table" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Dept.</th>
+                                        <th>Deadline</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-jobs-list">
+                                    <tr>
+                                        <td colspan="4" style="text-align:center;">Loading jobs...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Pending Approvals -->
+                    <div id="admin-pending" class="admin-tab-content hidden">
+                        <h3><i class="fa-solid fa-list-check"></i> Pending Approvals</h3>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
+                            Review and approve MCQs submitted by users.
+                        </p>
+                        <div id="admin-pending-list" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <!-- Pending questions injected here -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Manage Users -->
+                    <div id="admin-users" class="admin-tab-content hidden">
+                        <h3><i class="fa-solid fa-users-gear"></i> Manage Users</h3>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">
+                                View registered users and their roles (Admin / User).
+                            </p>
+                            <button id="admin-open-add-user-btn" class="primary-btn" style="background: #10b981; border-color: #10b981;">
+                                <i class="fa-solid fa-plus-circle"></i> Add New User
+                            </button>
+                        </div>
+                        <div class="table-container" style="overflow-x: auto;">
+                            <table class="leaderboard-table" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Role</th>
+                                        <th>Name</th>
+                                        <th>Joined</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-users-list">
+                                    <tr>
+                                        <td colspan="4" style="text-align:center;">Loading users...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Edit/Delete MCQs -->
+                    <div id="admin-edit-mcqs" class="admin-tab-content hidden">
+                        <h3><i class="fa-solid fa-pen-to-square"></i> Edit Database</h3>
+                        <div class="review-form-group" style="margin-top: 1rem;">
+                            <label for="admin-category-select">Select Category to Edit</label>
+                            <select id="admin-category-select" class="form-control">
+                                <option value="">-- Choose Category --</option>
+                                <!-- Categories injected by JS -->
+                            </select>
+                        </div>
+                        <div id="admin-edit-mcq-list" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                            <p style="text-align: center; color: var(--text-muted);">Select a category above to load questions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: Export Data -->
+                    <div id="admin-export" class="admin-tab-content hidden">
+                        <h3><i class="fa-solid fa-download"></i> Export Options</h3>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
+                            Download the entire MCQ database for backup or offline reading.
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="admin-export-category-select" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Select Category for PDF:</label>
+                            <select id="admin-export-category-select" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main); font-family: inherit; font-size: 1rem;">
+                                <option value="all">All Categories (Complete Database)</option>
+                                <!-- Categories injected by JS -->
+                            </select>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button id="admin-save-data-js-btn" class="primary-btn" style="background: #3b82f6; border-color: #3b82f6;">
+                                <i class="fa-solid fa-floppy-disk"></i> Save & Download (data.js)
+                            </button>
+                            
+                            <button id="admin-export-json-btn" class="primary-btn" style="background: #10b981; border-color: #10b981;">
+                                <i class="fa-solid fa-file-code"></i> Export as JSON (Data Backup)
+                            </button>
+                            
+                            <button id="admin-export-pdf-btn" class="primary-btn" style="background: #ef4444; border-color: #ef4444;">
+                                <i class="fa-solid fa-file-pdf"></i> Export as PDF (Printable)
+                            </button>
+                        </div>
+                        
+                        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--border-color);">
+                            <h4 style="margin-bottom: 0.8rem; color: #f59e0b;"><i class="fa-solid fa-cloud-arrow-up"></i> Live Cloud Sync</h4>
+                            <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                                Upload the entire offline data.js database into Firebase Cloud Firestore. Do this only once to initialize the live database.
+                            </p>
+                            <button id="admin-migrate-firebase-btn" class="primary-btn" style="background: #f59e0b; border-color: #f59e0b; color: white;">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Migrate Offline Data to Firebase
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    <!-- Admin: Edit User Modal -->
+    <div id="edit-user-modal" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-user-pen"></i> Edit User Account</h2>
+                <button id="close-edit-user-modal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="text-align: left;">
+                <input type="hidden" id="edit-user-uid">
+                
+                <div class="review-form-group">
+                    <label for="edit-user-name">Display Name</label>
+                    <input type="text" id="edit-user-name" class="form-control" placeholder="Full Name">
+                </div>
+
+                <div class="review-form-group">
+                    <label for="edit-user-email">Email Address</label>
+                    <input type="email" id="edit-user-email" class="form-control" placeholder="user@example.com">
+                </div>
+
+                <div class="review-form-group">
+                    <label for="edit-user-password">New Password (Override)</label>
+                    <input type="text" id="edit-user-password" class="form-control" placeholder="Leave blank to keep current">
+                </div>
+                
+                <div class="review-form-group">
+                    <label for="edit-user-role">Account Role</label>
+                    <select id="edit-user-role" class="form-control">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Admin role gives full access to the control panel. Credentials set here will override login access.
+                </p>
+
+                <button id="save-user-changes-btn" class="primary-btn full-width">
+                    <i class="fa-solid fa-floppy-disk"></i> Save Admin Overrides
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="data/subjects_index.js"></script>
+    <script src="db-store.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Firebase SDKs (Compat version for Drop-in Vanilla JS) -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+
+    <!-- Firebase Sync Logic (Must be loaded before script.js) -->
+    <script src="firebase-sync.js"></script>
+
+    <!-- Admin: Add New User Modal -->
+    <div id="admin-add-user-modal" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header" style="border-bottom: 2px solid #10b981;">
+                <h2 style="color: #10b981;"><i class="fa-solid fa-user-plus"></i> Create New Account</h2>
+                <button id="close-admin-add-user-modal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="text-align: left;">
+                <div class="review-form-group">
+                    <label for="new-user-name">Full Name <span style="color:red">*</span></label>
+                    <input type="text" id="new-user-name" class="form-control" placeholder="e.g. Ali Khan">
+                </div>
+
+                <div class="review-form-group">
+                    <label for="new-user-email">Email Address <span style="color:red">*</span></label>
+                    <input type="email" id="new-user-email" class="form-control" placeholder="user@example.com">
+                </div>
+
+                <div class="review-form-group">
+                    <label for="new-user-password">Password <span style="color:red">*</span></label>
+                    <div style="position: relative;">
+                        <input type="password" id="new-user-password" class="form-control" placeholder="Min 6 characters">
+                        <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePasswordVisibility('new-user-password', this)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted);"></i>
+                    </div>
+                </div>
+                
+                <div class="review-form-group">
+                    <label for="new-user-role">Assign Role</label>
+                    <select id="new-user-role" class="form-control">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    The user will be able to log in immediately with these credentials. Admin users will have full dashboard access.
+                </p>
+
+                <button id="admin-create-user-confirm-btn" class="primary-btn full-width" style="background: #10b981; border-color: #10b981;">
+                    <i class="fa-solid fa-user-check"></i> Create Account
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Image Modal -->
+    <div id="job-image-modal" class="modal hidden">
+        <div class="modal-content" style="max-width: 600px; padding: 1.5rem; text-align: center;">
+            <button class="close-modal" id="close-job-modal"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="job-modal-title" style="margin-bottom: 1rem;">Job Title</h3>
+            <img id="job-modal-image" src="" alt="Job Advertisement" style="max-width: 100%; max-height: 60vh; object-fit: contain; border-radius: 8px; margin-bottom: 1rem; display: none;">
+            <div id="job-modal-details" style="text-align: left; margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+                <!-- Details injected here -->
+            </div>
+            <a id="job-modal-link" href="#" target="_blank" class="primary-btn" style="display: inline-block; text-decoration: none;"><i class="fa-solid fa-up-right-from-square"></i> Apply Now</a>
+        </div>
+    </div>
+
+    <div id="copy-toast" class="copy-success-toast">
+        <i class="fa-solid fa-circle-check"></i> Link copied to clipboard!
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('PWA ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('PWA ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
